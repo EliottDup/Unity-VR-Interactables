@@ -24,7 +24,7 @@
 /VR-Interactables/[Aa]ssets/Plugins/Editor/JetBrains*
 
 # Visual Studio cache directory
-.vs/
+/VR-Interactables/.vscode/
 
 # Gradle cache directory
 .gradle/
