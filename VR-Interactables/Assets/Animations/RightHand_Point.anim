@@ -19,7 +19,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -74.875, y: 106.624, z: 61.113}
+        value: {x: -74.875, y: 106.624, z: 62}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -35,7 +35,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: 0, z: -21.469}
+        value: {x: 0, y: 0, z: -5}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -51,7 +51,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: 0, z: -6.833}
+        value: {x: 0, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -495,7 +495,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 61.113
+        value: 62
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -558,7 +558,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -21.469
+        value: -5
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -621,7 +621,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -6.833
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1608,7 +1608,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_index1/hands:b_r_index2
+    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_index1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1620,7 +1620,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_index1/hands:b_r_index2
+    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_index1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1632,7 +1632,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_index1/hands:b_r_index2
+    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_index1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1644,7 +1644,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_index1
+    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_thumb1/hands:b_r_thumb2/hands:b_r_thumb3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1656,7 +1656,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_index1
+    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_thumb1/hands:b_r_thumb2/hands:b_r_thumb3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1668,7 +1668,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_index1
+    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_thumb1/hands:b_r_thumb2/hands:b_r_thumb3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1968,7 +1968,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_thumb1/hands:b_r_thumb2/hands:b_r_thumb3
+    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_index1/hands:b_r_index2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1980,7 +1980,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_thumb1/hands:b_r_thumb2/hands:b_r_thumb3
+    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_index1/hands:b_r_index2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1992,7 +1992,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_thumb1/hands:b_r_thumb2/hands:b_r_thumb3
+    path: hands:r_hand_world/hands:b_r_hand/hands:b_r_index1/hands:b_r_index2
     classID: 4
     script: {fileID: 0}
     flags: 0
