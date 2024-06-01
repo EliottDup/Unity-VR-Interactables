@@ -43,9 +43,8 @@ public class LeverLogic : MonoBehaviour
         DefaultAngularDrag = rb.angularDrag;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Debug.DrawRay(transform.position, rotationAxis);
         if (_isHeld)
         {
             Vector3 dir2Hand = _target.position - transform.position;
@@ -62,7 +61,7 @@ public class LeverLogic : MonoBehaviour
         //Debug.Log("angle: " + currentAngle + ", value: " + GetNormalizedLeverPosition());
     }
 
-    void OnDrawGizmos()
+    void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position + transform.forward * pullDistance, 0.05f);
     }

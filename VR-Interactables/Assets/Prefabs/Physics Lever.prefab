@@ -264,7 +264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 2900033782654540525}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -524,6 +525,7 @@ GameObject:
   - component: {fileID: 2488416725273587452}
   - component: {fileID: 8459290059366539454}
   - component: {fileID: 569867280675743754}
+  - component: {fileID: 2900033782654540525}
   - component: {fileID: 2236927584102151750}
   m_Layer: 0
   m_Name: Lever Handle Model
@@ -597,6 +599,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &2900033782654540525
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3477555619819098183}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.015
+  m_Height: 0.19000004
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0.2}
 --- !u!65 &2236927584102151750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -808,7 +833,7 @@ Transform:
   m_GameObject: {fileID: 6407283042303751166}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 1.0001, z: 0.5833}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
