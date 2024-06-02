@@ -420,7 +420,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311236734707944103}
   serializedVersion: 4
-  m_Mass: 10
+  m_Mass: 5
   m_Drag: 100
   m_AngularDrag: 50
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -431,7 +431,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 127
+    m_Bits: 8
   m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 0
@@ -557,7 +557,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3477555619819098183}
-  m_Mesh: {fileID: 2534964839176971238, guid: f1237f657031ecd4aa821beaa32b89e4, type: 3}
+  m_Mesh: {fileID: 2534964839176971238, guid: e68cd5e8938b6254cb9a394f0397e5c5, type: 3}
 --- !u!23 &569867280675743754
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -980,7 +980,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8439668106280358972}
-  m_Mesh: {fileID: -7387706064836869012, guid: f1237f657031ecd4aa821beaa32b89e4, type: 3}
+  m_Mesh: {fileID: -7387706064836869012, guid: e68cd5e8938b6254cb9a394f0397e5c5, type: 3}
 --- !u!23 &4440128921754780767
 MeshRenderer:
   m_ObjectHideFlags: 0
