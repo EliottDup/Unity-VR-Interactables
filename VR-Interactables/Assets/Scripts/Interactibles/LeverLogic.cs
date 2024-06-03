@@ -48,8 +48,8 @@ public class LeverLogic : MonoBehaviour
         if (_isHeld)
         {
             Vector3 dir2Hand = _target.position - transform.position;
-            dir2Hand = Vector3.ProjectOnPlane(dir2Hand, rotationAxis).normalized;
-            rb.AddForceAtPosition(dir2Hand.normalized * pullForce, transform.position + transform.forward * pullDistance);
+            dir2Hand = Vector3.ProjectOnPlane(dir2Hand, rotationAxis);
+            rb.AddForceAtPosition(dir2Hand * pullForce, transform.position + transform.forward * pullDistance);
         }
         float newAngle = GetAngle();
         if (newAngle != currentAngle)
