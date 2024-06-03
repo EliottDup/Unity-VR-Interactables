@@ -253,7 +253,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _holdHeight: 0.14
-  _pullForce: 200
+  _pullForce: 1000
 --- !u!1 &2444540305162047549
 GameObject:
   m_ObjectHideFlags: 0

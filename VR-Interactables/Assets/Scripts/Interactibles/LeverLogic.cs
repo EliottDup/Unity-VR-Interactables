@@ -15,8 +15,6 @@ public class LeverLogic : MonoBehaviour
     float pullDistance = 0.2f;
 
     [SerializeField] float pullForce = 200;
-    [SerializeField] float angularDragWhenPulling = 25;
-    float DefaultAngularDrag = 0;
 
     [Header("Events")]
     public UnityEvent<float> OnValueChanged;
@@ -40,7 +38,6 @@ public class LeverLogic : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         hj = GetComponent<HingeJoint>();
         rotationAxis = transform.right;
-        DefaultAngularDrag = rb.angularDrag;
     }
 
     void FixedUpdate()
@@ -71,14 +68,12 @@ public class LeverLogic : MonoBehaviour
         Debug.Log(args.interactorObject.transform.parent.name + " has Selected! :3");
         _isHeld = true;
         _target = args.interactorObject.transform.parent;
-        rb.angularDrag = angularDragWhenPulling;
     }
 
     public void OnSelectExit(SelectExitEventArgs args)
     {
         _isHeld = false;
         Debug.Log(GetNormalizedLeverPosition());
-        rb.angularDrag = DefaultAngularDrag;
     }
 
     float GetAngle()
