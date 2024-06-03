@@ -11,7 +11,7 @@
 /VR-Interactables/[Uu]ser[Ss]ettings/
 
 # Recordings shouldn't be saved
-/VR-Interactables/[Rr]ecordings/
+/VR-Interactables/[Aa]ssets/[Rr]ecordings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
