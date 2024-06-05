@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -10,22 +11,6 @@ public class RecorderScript : MonoBehaviour
 
     public UnityEvent<string> StartRecord;
     public UnityEvent StopRecord;
-    public bool startRec = false;
-    public bool endRec = false;
-
-    void Update()
-    {
-        if (startRec && !isRecording)
-        {
-            startRec = false;
-            StartRecording();
-        }
-        if (endRec && isRecording)
-        {
-            endRec = false;
-            StopRecording();
-        }
-    }
 
     public void OnActivate(ActivateEventArgs args)
     {
@@ -43,7 +28,7 @@ public class RecorderScript : MonoBehaviour
     {
         isRecording = true;
 
-        string path = Path.Combine(Application.dataPath, "Recordings");
+        string path = Path.Combine(Application.persistentDataPath, "Recordings");
         path = Path.Combine(path, DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss"));
         if (!Directory.Exists(path))
         {

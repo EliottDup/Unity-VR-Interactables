@@ -1,0 +1,16 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+Texture2D<float4> inputTexture;
+int width;
+int height;
+
+RWStructuredBuffer<float4> Result;
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    if (id.x > width || id.y > height) return;
+    int pixel = id.x + id.y * height;
+    Result[pixel] = inputTexture[id.xy];
+}
