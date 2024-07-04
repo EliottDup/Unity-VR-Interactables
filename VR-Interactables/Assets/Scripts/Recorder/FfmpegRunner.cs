@@ -1,8 +1,6 @@
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
-using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,6 +12,7 @@ public class FfmpegRunner : MonoBehaviour
     private string audioPath;
     private bool isDoneRecordingFrames = false;
     private bool isDoneRecordingAudio = false;
+    private bool isDoneConverting = false;
 
     [SerializeField] private string ffmpegPath = "C:/ffmpeg/bin/ffmpeg.exe";
     private string persistentDataPath;
@@ -42,15 +41,16 @@ public class FfmpegRunner : MonoBehaviour
             isDoneRecordingFrames = false;
             isDoneRecordingAudio = false;
             persistentDataPath = Application.persistentDataPath;
-            EditorUtility.RevealInFinder(persistentDataPath + "/Output");
+            //EditorUtility.RevealInFinder(persistentDataPath + "/Output");
             Thread thread = new Thread(RunFFmpeg);
             OnStartProcessing?.Invoke();
             thread.Start();
-            Task.Run(() =>
-            {
-                thread.Join();
-                OnFinishProcessing?.Invoke();
-            });
+        }
+
+        if (isDoneConverting)
+        {
+            isDoneConverting = false;
+            OnFinishProcessing.Invoke();
         }
     }
 
@@ -98,6 +98,7 @@ public class FfmpegRunner : MonoBehaviour
         }
 
         UnityEngine.Debug.Log("FFmpeg is done!");
+        isDoneConverting = true;
     }
 
 }

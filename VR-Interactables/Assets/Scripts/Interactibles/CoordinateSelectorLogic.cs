@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class CoordinateSelectorLogic : MonoBehaviour
+public class CoordinateSelectorLogic : Interactable<Vector2>
 {
     [SerializeField] Vector2 _size;
     [SerializeField] Vector3 _centerOffset;
@@ -14,13 +14,7 @@ public class CoordinateSelectorLogic : MonoBehaviour
 
     [SerializeField] float _pullForce = 200;
 
-    // [HideInInspector]
-    public Vector2 value = Vector2.zero;
-
     Rigidbody rb;
-
-    [Header("Events")]
-    public UnityEvent<Vector2> OnValueChanged;
 
     public bool _debugDrawGizmos = false;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class ButtonLogic : MonoBehaviour
+public class ButtonLogic : Interactable<bool>
 {
     [SerializeField] bool _isToggle = false;
 
@@ -35,9 +35,9 @@ public class ButtonLogic : MonoBehaviour
     }
 
     [Header("Events")]
-    public UnityEvent<bool> OnValueChanged;
 
-    public UnityEvent OnValueTrue, OnValueFalse;
+    public UnityEvent OnValueTrue;
+    public UnityEvent OnValueFalse;
 
     public void OnPress(BaseInteractionEventArgs args)
     {

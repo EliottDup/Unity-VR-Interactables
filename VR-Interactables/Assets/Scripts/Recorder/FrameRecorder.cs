@@ -27,7 +27,7 @@ public class FrameRecorder : MonoBehaviour
     {
         renderTexture = new RenderTexture(1920 * 3 / 4, 1080 * 3 / 4, 24);
         screenShot = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGB24, false);
-        cameraToRecord.targetTexture = renderTexture;
+        //cameraToRecord.targetTexture = renderTexture;
         framecount = 0;
     }
 

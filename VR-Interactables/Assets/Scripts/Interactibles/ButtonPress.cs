@@ -12,7 +12,7 @@ public class ButtonPress : MonoBehaviour
     float _deadTime = 0.5f;
     bool _deadTimeIsActive = false;
     bool _isFrozen = false;
-    [SerializeField] float _resetSpeed = 5;
+    [SerializeField] float _resetSpeed = 3;
 
 
     [SerializeField] Transform _visualTarget;

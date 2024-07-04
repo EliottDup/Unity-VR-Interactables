@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit;
-public class SliderLogic : MonoBehaviour
+public class SliderLogic : Interactable<float>
 {
 
     [SerializeField] float _sliderLength;
@@ -35,9 +35,6 @@ public class SliderLogic : MonoBehaviour
 
     bool _isHeld = false;
     Transform _target;
-
-    float _value;
-    public UnityEvent<float> OnValueChanged;
 
     [SerializeField] bool _debugDrawGizmos = false;
 
@@ -82,10 +79,10 @@ public class SliderLogic : MonoBehaviour
             Debug.DrawRay(transform.position, targetDir, Color.yellow);
         }
         float newValue = GetSliderValue();
-        if (newValue != _value)
+        if (newValue != value)
         {
-            _value = newValue;
-            OnValueChanged.Invoke(_value);
+            value = newValue;
+            OnValueChanged.Invoke(value);
         }
     }
 

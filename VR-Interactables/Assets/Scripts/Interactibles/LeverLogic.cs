@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
 
-public class LeverLogic : MonoBehaviour
+public class LeverLogic : Interactable<float>
 {
 
     public float startAngle = -45, endAngle = 45;
@@ -15,9 +15,6 @@ public class LeverLogic : MonoBehaviour
     float pullDistance = 0.2f;
 
     [SerializeField] float pullForce = 200;
-
-    [Header("Events")]
-    public UnityEvent<float> OnValueChanged;
 
     bool _isHeld = false;
     Transform _target;
@@ -30,7 +27,6 @@ public class LeverLogic : MonoBehaviour
     HingeJoint hj;
 
     Vector3 InitialForward;
-
 
     void Start()
     {
@@ -51,7 +47,8 @@ public class LeverLogic : MonoBehaviour
         float newAngle = GetAngle();
         if (newAngle != currentAngle)
         {
-            OnValueChanged.Invoke(GetNormalizedLeverPosition());
+            value = GetNormalizedLeverPosition();
+            OnValueChanged.Invoke(value);
             currentAngle = newAngle;
             //Debug.Log("test");
         }

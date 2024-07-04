@@ -1,16 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml;
-using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Rendering;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class JoystickLogic : MonoBehaviour
+public class JoystickLogic : Interactable<Vector2>
 {
     [SerializeField] float _maxAngle = 30f;
-    public UnityEvent<Vector2> OnValueChanged;
 
     Vector3 _initialForward;
     Vector3 _initialUp;
@@ -56,7 +50,13 @@ public class JoystickLogic : MonoBehaviour
 
         float xVal = Mathf.Lerp(-1, 1, Mathf.InverseLerp(-_maxAngle, _maxAngle, xAngle));
         float zVal = Mathf.Lerp(-1, 1, Mathf.InverseLerp(-_maxAngle, _maxAngle, zAngle));
-        OnValueChanged.Invoke(new Vector2(xVal, zVal));
+        Vector2 newVal = new Vector2(xVal, zVal);
+        if (value != newVal)
+        {
+            value = new Vector2(xVal, zVal);
+            OnValueChanged.Invoke(value);
+        }
+
     }
 
     void OnDrawGizmosSelected()

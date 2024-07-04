@@ -3,14 +3,16 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class RecorderScript : MonoBehaviour
 {
-    bool isRecording = false;
+    public bool isRecording { get; private set; }
 
     public UnityEvent<string> StartRecord;
     public UnityEvent StopRecord;
+    public Camera recorderCamera;
 
     public void OnActivate(ActivateEventArgs args)
     {
@@ -24,7 +26,7 @@ public class RecorderScript : MonoBehaviour
         }
     }
 
-    void StartRecording()
+    public void StartRecording()
     {
         isRecording = true;
 
@@ -39,7 +41,7 @@ public class RecorderScript : MonoBehaviour
         StartRecord?.Invoke(path);
     }
 
-    void StopRecording()
+    public void StopRecording()
     {
         isRecording = false;
         StopRecord?.Invoke();

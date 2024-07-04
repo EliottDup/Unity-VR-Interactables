@@ -11,14 +11,14 @@ GameObject:
   - component: {fileID: 1355467248963321555}
   - component: {fileID: 1518748351770372148}
   - component: {fileID: 2623358762423434333}
-  - component: {fileID: 4062045452201258470}
+  - component: {fileID: 8999219547247883917}
   m_Layer: 0
   m_Name: RawImage (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1355467248963321555
 RectTransform:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &4062045452201258470
+--- !u!114 &8999219547247883917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,7 +85,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e15fe1e056b2d469285c80d750dd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _recorderCamera: {fileID: 4967295624249671753}
 --- !u!1 &3095628582257814104
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,13 +182,10 @@ GameObject:
   - component: {fileID: 9029117243414037530}
   - component: {fileID: 8775595039924241611}
   - component: {fileID: 320160112475297773}
-  - component: {fileID: 4595593099211748284}
-  - component: {fileID: 5566926389553266164}
-  - component: {fileID: 9026025841134986217}
-  - component: {fileID: 8811846197767326606}
+  - component: {fileID: 8292557335058079587}
   m_Layer: 0
   m_Name: Recorder
-  m_TagString: Untagged
+  m_TagString: Recorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,19 +324,7 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4595593099211748284}
-        m_TargetAssemblyTypeName: RecorderScript, Assembly-CSharp
-        m_MethodName: OnActivate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -374,7 +358,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 8703554141188322242}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
@@ -424,7 +408,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &4595593099211748284
+--- !u!114 &8292557335058079587
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -433,189 +417,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 4780243766941323432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93afe1434ed0fbf4fa5786c27c9877d2, type: 3}
+  m_Script: {fileID: 11500000, guid: b93d04f939987c44c8105611cb150f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartRecord:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 456714279432167235}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: -7674923503234155378, guid: d9c196f209db3884eb25ba88d075f00e,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5566926389553266164}
-        m_TargetAssemblyTypeName: FrameRecorder, Assembly-CSharp
-        m_MethodName: StartRecording
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 9026025841134986217}
-        m_TargetAssemblyTypeName: FrameRecorder, Assembly-CSharp
-        m_MethodName: StartRecording
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  StopRecord:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 456714279432167235}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8556262120643298411, guid: d9c196f209db3884eb25ba88d075f00e,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5566926389553266164}
-        m_TargetAssemblyTypeName: FrameRecorder, Assembly-CSharp
-        m_MethodName: StopRecording
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 9026025841134986217}
-        m_TargetAssemblyTypeName: FrameRecorder, Assembly-CSharp
-        m_MethodName: StopRecording
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &5566926389553266164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4780243766941323432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e90b539960c5f5243a43aeb567aa1f3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraToRecord: {fileID: 4967295624249671753}
-  OnFinishFrameRecording:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8811846197767326606}
-        m_TargetAssemblyTypeName: FfmpegRunner, Assembly-CSharp
-        m_MethodName: OnFinishFrameRecording
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &9026025841134986217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4780243766941323432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f06a8c9d2d603c4691035022d9f6167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnFinishAudioRecording:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8811846197767326606}
-        m_TargetAssemblyTypeName: FfmpegRunner, Assembly-CSharp
-        m_MethodName: OnFinishRecordingAudio
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &8811846197767326606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4780243766941323432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ecbbe5e717bed140bebf928bd231042, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ffmpegPath: C:/ffmpeg/bin/ffmpeg.exe
-  OnStartProcessing:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 456714279432167235}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 507dec70eaa61bf4ba64010c32efc80c,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnFinishProcessing:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 456714279432167235}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8556262120643298411, guid: d9c196f209db3884eb25ba88d075f00e,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  cam: {fileID: 4967295624249671753}
+  targetTexture: {fileID: 0}
+  viewfinders:
+  - {fileID: 1134618136811503394}
+  - {fileID: 2623358762423434333}
+  offMaterial: {fileID: 2100000, guid: 02560cee78882dc4dafc99c763f96a1c, type: 2}
+  activeMaterial: {fileID: 2100000, guid: 662c99b50328d2d41967636d243ea9fa, type: 2}
+  overrideMaterial: {fileID: 2100000, guid: 507dec70eaa61bf4ba64010c32efc80c, type: 2}
+  statusIndicator: {fileID: 1319622468341176010}
 --- !u!1 &5452018425529557539
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +498,7 @@ Camera:
   field of view: 60.000004
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 16.22
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -755,14 +568,14 @@ GameObject:
   - component: {fileID: 8525518728164289305}
   - component: {fileID: 7102684833642261744}
   - component: {fileID: 1134618136811503394}
-  - component: {fileID: 8417678599446762192}
+  - component: {fileID: 5189303141609823669}
   m_Layer: 0
   m_Name: RawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8525518728164289305
 RectTransform:
   m_ObjectHideFlags: 0
@@ -817,7 +630,7 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &8417678599446762192
+--- !u!114 &5189303141609823669
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -829,7 +642,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e15fe1e056b2d469285c80d750dd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _recorderCamera: {fileID: 4967295624249671753}
 --- !u!1001 &7239378578227722233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -904,9 +716,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c196f209db3884eb25ba88d075f00e, type: 3}
---- !u!23 &456714279432167235 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 7071182760956848314, guid: d9c196f209db3884eb25ba88d075f00e,
+--- !u!1 &1319622468341176010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8513859187771203891, guid: d9c196f209db3884eb25ba88d075f00e,
     type: 3}
   m_PrefabInstance: {fileID: 7239378578227722233}
   m_PrefabAsset: {fileID: 0}

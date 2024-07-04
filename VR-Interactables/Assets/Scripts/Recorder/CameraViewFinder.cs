@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CameraViewFinder : MonoBehaviour
 {
-    [SerializeField] Camera _recorderCamera;
     Transform _mainCamTransform;
     RawImage _image;
 
@@ -18,8 +17,7 @@ public class CameraViewFinder : MonoBehaviour
 
     void Update()
     {
-        _image.texture = _recorderCamera.targetTexture;
-        if (Vector3.Dot(transform.forward, _mainCamTransform.forward) > 0)
+        if (Vector3.Dot(transform.forward, _mainCamTransform.position - transform.position) < 0)
         {
             _image.enabled = false;
         }
