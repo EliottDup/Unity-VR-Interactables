@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Button
   - Recorder
+  - RevolverMag
   layers:
   - Default
   - TransparentFX

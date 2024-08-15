@@ -14,8 +14,6 @@ public class FrameRecorder : MonoBehaviour
     private Texture2D screenShot;
     private int framecount = 0;
     private bool isRecording = false;
-
-    private int targetfps = 30;
     private float _t = 0;
     private string recordingPath = "";
 
