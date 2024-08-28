@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Gun : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] string gunName;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    [Tooltip("The amount of bullets shot when pressing the trigger")]
+    [SerializeField] int burstSize;
+
+    [Tooltip("The max amount of bursts per second")]
+    [SerializeField] int timeBetweenBursts;
+    [Tooltip("The time between shots inside a burst")]
+    [SerializeField] string timeBetweenShots;
+    [SerializeField] XRSocketInteractor MagasineHolder;
+    void StartBurst(){
     }
 }
