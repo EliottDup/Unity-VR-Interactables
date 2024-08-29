@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 public class HandMenu : MonoBehaviour
 {
@@ -18,7 +18,7 @@ public class HandMenu : MonoBehaviour
     void Start()
     {
         LoadTransform();
-        GrabbingIsAllowed = GetComponent<XRGrabInteractable>().enabled;
+        GrabbingIsAllowed = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>().enabled;
     }
 
     public void SaveTransform()
@@ -62,7 +62,7 @@ public class HandMenu : MonoBehaviour
 
     public void SetAllowGrabbing(bool value)
     {
-        GetComponent<XRGrabInteractable>().enabled = value;
+        GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>().enabled = value;
         GrabbingIsAllowed = value;
     }
 }

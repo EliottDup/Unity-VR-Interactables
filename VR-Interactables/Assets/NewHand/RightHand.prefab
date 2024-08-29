@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2192165643457780708}
-  - component: {fileID: 7399760577227673140}
   m_Layer: 7
   m_Name: RightHand
   m_TagString: Untagged
@@ -33,19 +32,6 @@ Transform:
   - {fileID: 1662842180165773747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7399760577227673140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5194583042650757662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 840afdad208395844a420105c19eba9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indexTransform: {fileID: 5403138549926225438}
 --- !u!1001 &4949661696778175784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64,7 +50,7 @@ PrefabInstance:
         type: 3}
       propertyPath: thumbInputActionReference
       value: 
-      objectReference: {fileID: 1051970993964438624, guid: c348712bda248c246b8c49b3db54643f,
+      objectReference: {fileID: 4882423536348182929, guid: c348712bda248c246b8c49b3db54643f,
         type: 3}
     - target: {fileID: 4270795822895632656, guid: 58574c109a4982142bc86241b8b0d613,
         type: 3}
@@ -140,12 +126,6 @@ PrefabInstance:
 --- !u!4 &1662842180165773747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6026697223381920923, guid: 58574c109a4982142bc86241b8b0d613,
-    type: 3}
-  m_PrefabInstance: {fileID: 4949661696778175784}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5403138549926225438 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1030047734125585206, guid: 58574c109a4982142bc86241b8b0d613,
     type: 3}
   m_PrefabInstance: {fileID: 4949661696778175784}
   m_PrefabAsset: {fileID: 0}

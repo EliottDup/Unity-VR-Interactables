@@ -1,9 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class LongGrabInteractor : XRDirectInteractor
@@ -28,11 +28,6 @@ public class LongGrabInteractor : XRDirectInteractor
         }
     }
 
-//     public override void ProcessInteractor(XRInteractionUpdateOrder.UpdatePhase updatePhase){
-//        base.ProcessInteractor(updatePhase);
-//         GetValidTargets();
-//    }
-
     void OnDrawGizmos(){
         if (interactionManager == null) return;
         foreach(var target in GetSortedPossibleFarTargets()){
@@ -48,7 +43,7 @@ public class LongGrabInteractor : XRDirectInteractor
 
         for (int i = targets.Count-1; i >= 0; i--){
             IXRInteractable target = targets[i];
-            if (Vector3.Distance(target.transform.position, transform.position) < minimumDistance || Vector3.Dot((transform.position - target.transform.position).normalized, (shoulder.transform.position - transform.position).normalized) < dotCutoff){
+            if (!CanSelect(target as IXRSelectInteractable) || Vector3.Distance(target.transform.position, transform.position) < minimumDistance || Vector3.Dot((transform.position - target.transform.position).normalized, (shoulder.transform.position - transform.position).normalized) < dotCutoff){
                 continue;
             }
             float score = Vector3.Distance(target.transform.position, transform.position)/Mathf.Pow(Vector3.Dot((transform.position - target.transform.position).normalized, (shoulder.transform.position - transform.position).normalized), dotExp);

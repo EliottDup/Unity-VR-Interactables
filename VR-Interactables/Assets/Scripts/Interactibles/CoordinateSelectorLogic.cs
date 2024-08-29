@@ -66,7 +66,7 @@ public class CoordinateSelectorLogic : Interactable<Vector2>
         float maxZ = _startingLocalPosition.z + _centerOffset.z + _size.y / 2;
         float minZ = _startingLocalPosition.z + _centerOffset.z - _size.y / 2;
 
-        Vector3 localVel = transform.InverseTransformDirection(rb.velocity);
+        Vector3 localVel = transform.InverseTransformDirection(rb.linearVelocity);
 
         float localX = transform.localPosition.x;
         float localZ = transform.localPosition.z;
@@ -93,7 +93,7 @@ public class CoordinateSelectorLogic : Interactable<Vector2>
             localVel.z *= -0f;
         }
         transform.localPosition = new Vector3(localX, _startingLocalPosition.y, localZ);
-        rb.velocity = transform.TransformDirection(localVel);
+        rb.linearVelocity = transform.TransformDirection(localVel);
 
         float xValue = Mathf.InverseLerp(minX, maxX, localX);
         float zValue = Mathf.InverseLerp(minZ, maxZ, localZ);

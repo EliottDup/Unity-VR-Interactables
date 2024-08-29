@@ -16,7 +16,7 @@ public class TmpGun : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        XRGrabInteractable interactable = GetComponent<XRGrabInteractable>();
+        UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
         interactable.activated.AddListener((ActivateEventArgs args) => {Shoot();});   
     }
 

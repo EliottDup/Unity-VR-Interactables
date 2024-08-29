@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 public class Gun : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class Gun : MonoBehaviour
     [SerializeField] int timeBetweenBursts;
     [Tooltip("The time between shots inside a burst")]
     [SerializeField] string timeBetweenShots;
-    [SerializeField] XRSocketInteractor MagasineHolder;
+    [SerializeField] UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor MagasineHolder;
     void StartBurst(){
     }
 }
