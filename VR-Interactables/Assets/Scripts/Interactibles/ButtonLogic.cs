@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,14 @@ public class ButtonLogic : Interactable<bool>
 {
     [SerializeField] bool _isToggle = false;
 
-    private bool _value = false;
+    
+
+        // interface implementation
+
+    public UnityEvent<bool> _onValueChanged;
+
+
+
     public bool buttonValue
     {
         get
@@ -28,7 +36,7 @@ public class ButtonLogic : Interactable<bool>
                 {
                     OnValueFalse.Invoke();
                 }
-                OnValueChanged.Invoke(value);
+                _onValueChanged.Invoke(value);
             }
             _value = value;
         }
@@ -38,6 +46,8 @@ public class ButtonLogic : Interactable<bool>
 
     public UnityEvent OnValueTrue;
     public UnityEvent OnValueFalse;
+
+
 
     public void OnPress(BaseInteractionEventArgs args)
     {

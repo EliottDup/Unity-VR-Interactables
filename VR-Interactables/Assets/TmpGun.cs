@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class TmpGun : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class TmpGun : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+        XRGrabInteractable interactable = GetComponent<XRGrabInteractable>();
         interactable.activated.AddListener((ActivateEventArgs args) => {Shoot();});   
     }
 

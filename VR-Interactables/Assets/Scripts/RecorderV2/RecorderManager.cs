@@ -10,9 +10,8 @@ public class RecorderManager : MonoBehaviour
 {
     public static RecorderManager Instance { get; private set; }
 
-    public List<Recorder> recorders { get; private set; }
-    public Recorder startActiveRecorder;
-    Recorder activeRecorder;
+    public List<Recorder> recorders;
+    [SerializeField] Recorder activeRecorder;
 
     public RawImage displayTexture;
 
@@ -31,7 +30,7 @@ public class RecorderManager : MonoBehaviour
 
     void Start()
     {
-        UpdateRecorderList();
+        SetActiveRecorder(activeRecorder);
     }
 
     public void UpdateRecorderList()
@@ -46,19 +45,19 @@ public class RecorderManager : MonoBehaviour
 
         if (activeRecorder == null & recorders.Count > 0)
         {
-            if (startActiveRecorder != null)
-            {
-                SetActiveRecorder(startActiveRecorder);
-            }
-            else
-            {
-                SetActiveRecorder(recorders[0]);
-            }
+            SetActiveRecorder(recorders[0]);
         }
+
     }
 
     public void SetActiveRecorder(Recorder recorder)
     {
+        if (!recorders.Contains(recorder)){
+            if (recorders.Count != 0){
+                SetActiveRecorder(recorders[0]);
+            }
+            return;
+        }
         Recorder prevRecorder = activeRecorder;
         activeRecorder = recorder;
         recorder.UpdateCamStatus();
@@ -66,12 +65,11 @@ public class RecorderManager : MonoBehaviour
         {
             prevRecorder.UpdateCamStatus();
         }
-        UpdateRecorderList();
-
+        
         displayTexture.texture = recorder.targetTexture;
     }
 
-    public Recorder getActiveRecorder()
+    public Recorder GetActiveRecorder()
     {
         return activeRecorder;
     }

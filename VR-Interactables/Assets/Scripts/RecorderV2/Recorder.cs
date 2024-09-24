@@ -19,7 +19,7 @@ public class Recorder : MonoBehaviour
 
     public bool GetIsEnabled()
     {
-        return RecorderManager.Instance.getActiveRecorder() == this;
+        return RecorderManager.Instance.GetActiveRecorder() == this;
     }
 
     public void SetOverride(bool value)

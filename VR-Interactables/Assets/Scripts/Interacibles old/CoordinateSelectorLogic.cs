@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
@@ -20,6 +22,9 @@ public class CoordinateSelectorLogic : Interactable<Vector2>
 
     bool _isHeld = false;
     Transform _target;
+
+    public UnityEvent<Vector2> _onValueChanged;
+
 
     void OnDrawGizmos()
     {
@@ -99,11 +104,11 @@ public class CoordinateSelectorLogic : Interactable<Vector2>
         float zValue = Mathf.InverseLerp(minZ, maxZ, localZ);
 
         Vector2 newValue = new(xValue, zValue);
-        if (value != newValue)
+        if (_value != newValue)
         {
-            OnValueChanged.Invoke(newValue);
+            _onValueChanged.Invoke(newValue);
         }
-        value = newValue;
+        _value = newValue;
     }
 
     public void OnSelectEnter(BaseInteractionEventArgs args)

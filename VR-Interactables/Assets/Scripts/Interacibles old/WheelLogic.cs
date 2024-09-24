@@ -1,6 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.EditorTools;
+//using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -17,6 +18,8 @@ public class WheelLogic : Interactable<float>
     Rigidbody rb;
     private Dictionary<Transform, Vector3> _handPositionPairs = new Dictionary<Transform, Vector3>();
 
+    public UnityEvent<float> _onValueChanged;
+
     void Start()
     {
         _initialUp = transform.up;
@@ -32,10 +35,10 @@ public class WheelLogic : Interactable<float>
             rb.AddForceAtPosition(dirToHand * _pullForce, transform.TransformPoint(localGrabPosition));
         }
         float newValue = transform.localEulerAngles.y;//Vector3.SignedAngle(_initialUp, transform.up, transform.forward);
-        if (newValue != value)
+        if (newValue != _value)
         {
-            value = newValue;
-            OnValueChanged?.Invoke(value);
+            _value = newValue;
+            _onValueChanged?.Invoke(_value);
         }
     }
     public void OnSelectEnter(BaseInteractionEventArgs args)

@@ -28,6 +28,8 @@ public class LeverLogic : Interactable<float>
 
     Vector3 InitialForward;
 
+    public UnityEvent<float> _onValueChanged;
+    
     void Start()
     {
         InitialForward = transform.forward;
@@ -47,8 +49,8 @@ public class LeverLogic : Interactable<float>
         float newAngle = GetAngle();
         if (newAngle != currentAngle)
         {
-            value = GetNormalizedLeverPosition();
-            OnValueChanged.Invoke(value);
+            _value = GetNormalizedLeverPosition();
+            _onValueChanged.Invoke(_value);
             currentAngle = newAngle;
             //Debug.Log("test");
         }

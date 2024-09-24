@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,6 +38,8 @@ public class SliderLogic : Interactable<float>
     Transform _target;
 
     [SerializeField] bool _debugDrawGizmos = false;
+
+    public UnityEvent<float> _onValueChanged;
 
     void Start()
     {
@@ -79,10 +82,10 @@ public class SliderLogic : Interactable<float>
             Debug.DrawRay(transform.position, targetDir, Color.yellow);
         }
         float newValue = GetSliderValue();
-        if (newValue != value)
+        if (newValue != _value)
         {
-            value = newValue;
-            OnValueChanged.Invoke(value);
+            _value = newValue;
+            _onValueChanged.Invoke(_value);
         }
     }
 

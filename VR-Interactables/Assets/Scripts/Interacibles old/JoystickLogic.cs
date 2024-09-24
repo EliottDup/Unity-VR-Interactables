@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -17,6 +18,8 @@ public class JoystickLogic : Interactable<Vector2>
 
     bool _isHeld;
     Transform _target;
+
+    public UnityEvent<Vector2> _onValueChanged;
 
     void Start()
     {
@@ -51,10 +54,10 @@ public class JoystickLogic : Interactable<Vector2>
         float xVal = Mathf.Lerp(-1, 1, Mathf.InverseLerp(-_maxAngle, _maxAngle, xAngle));
         float zVal = Mathf.Lerp(-1, 1, Mathf.InverseLerp(-_maxAngle, _maxAngle, zAngle));
         Vector2 newVal = new Vector2(xVal, zVal);
-        if (value != newVal)
+        if (_value != newVal)
         {
-            value = new Vector2(xVal, zVal);
-            OnValueChanged.Invoke(value);
+            _value = new Vector2(xVal, zVal);
+            _onValueChanged.Invoke(_value);
         }
 
     }
